@@ -19,17 +19,14 @@ public:
         return cnt;
     }
     ListNode* middleNode(ListNode* head) {
-        int l=length(head);
+        // int l=length(head);
         if(head==NULL or head->next==NULL){
             return head;
         }
         ListNode*slow=head;
-        ListNode*fast=head->next;
+        ListNode*fast=head;
         while(fast!=NULL and fast->next!=NULL){
             fast=fast->next->next;
-            slow=slow->next;
-        }
-        if(l%2==0){
             slow=slow->next;
         }
         return slow;
