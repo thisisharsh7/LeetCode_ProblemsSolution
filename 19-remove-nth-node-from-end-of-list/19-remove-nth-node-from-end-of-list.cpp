@@ -19,27 +19,55 @@ public:
         return cnt;
     }
     ListNode* removeNthFromEnd(ListNode* head, int n) {
-        int l=length(head);
-        if(l==1 and n==1){
+        if(head->next==NULL and n==1){
             return NULL;
-        }else if(l==1 and n>1){
-            return head;
-        }else if(n==l){
+        }
+        // int l=length(head);
+        // if(l==1 and n==1){
+        //     return NULL;
+        // }else if(l==1 and n>1){
+        //     return head;
+        // }
+        // else if(n==l){
+        //     ListNode*temp=head->next;
+        //     delete head;
+        //     head=temp;
+        //     return head;
+        // }
+        
+        // int p=l-n+1;
+        // ListNode* prev=NULL;
+        // ListNode* temp=head;
+        // while(p-1){
+        //     prev=temp;
+        //     temp=temp->next;
+        //     p--;
+        // }
+        // prev->next=temp->next;
+        // delete temp;
+        // return head;
+        ListNode*fast=head;
+        ListNode*slow=head;
+        for(int i=0;i<n;i++){
+            fast=fast->next;
+        }
+        ListNode*prev=NULL;
+        while(fast!=NULL){
+            fast=fast->next;
+            prev=slow;
+            slow=slow->next;
+           
+        }
+        if(prev==NULL){
             ListNode*temp=head->next;
             delete head;
             head=temp;
             return head;
         }
-        int p=l-n+1;
-        ListNode* prev=NULL;
-        ListNode* temp=head;
-        while(p-1){
-            prev=temp;
-            temp=temp->next;
-            p--;
-        }
-        prev->next=temp->next;
-        delete temp;
+        prev->next=slow->next;
+        delete slow;
+        
         return head;
+        
     }
 };
