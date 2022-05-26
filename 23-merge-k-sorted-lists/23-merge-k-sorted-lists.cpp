@@ -36,8 +36,7 @@ public:
             ListNode* ans;
             ListNode* c=NULL;
             for(int i=0;i<lists.size();i++){
-                ListNode*a=lists[i];
-                ans=merge(a,c);
+                ans=merge(lists[i],c);
                 c=ans;
             }
             return ans;
