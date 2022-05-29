@@ -5,20 +5,6 @@ public:
         int n=nums.size();
         vector<int> ans;
         stack<int> st;
-        // st.push(0);
-        // for(int i=1;i<n;i++){
-        //   while(!st.empty() and nums[i]>nums[st.top()]){
-        //       int pos=st.top();
-        //       nge[pos]=nums[i];
-        //       st.pop();
-        //   }
-        //     st.push(i);
-        // }
-        // while(!st.empty()){
-        //     int pos=st.top();
-        //     nge[pos]=-1;
-        //     st.pop();
-        // }
         st.push(n-1);
         nge[n-1]=n;
         for(int i=n-2;i>=0;i--){
@@ -37,8 +23,7 @@ public:
             if(j<i){
                 j=i;
             }
-            int ep=i+k;
-            while(ep>nge[j]){
+            while(i+k>nge[j]){
                 j=nge[j];
             }
             ans.push_back(nums[j]);
