@@ -23,7 +23,8 @@ public:
             if(j<i){
                 j=i;
             }
-            while(i+k>nge[j]){
+            int a=i+k;
+            while(a>nge[j]){
                 j=nge[j];
             }
             ans.push_back(nums[j]);
