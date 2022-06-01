@@ -1,32 +1,32 @@
 class Solution {
 public:
     int findPeakElement(vector<int>& nums) {
-        int x=1;
+        int index=1;
         if(nums.size()==2){
-            int i=nums[x-1];
-            int mid=nums[x];
-            if(mid>i){
-                return x;
+            int prev=nums[index-1];
+            int mid=nums[index];
+            if(mid<prev){
+                return 0;
             }else{
-                return  0;
+                return  index;
             }
         }
-       while(x<=(nums.size()-1)){
-            int mid=nums[x];
-            int i=nums[x-1];
-            if(mid>i){
-                if(x!=(nums.size()-1)){
-                    int j=nums[x+1];
-                    if(mid>j){
-                        return x;
+       while(index<=(nums.size()-1)){
+            int mid=nums[index];
+            int prev=nums[index-1];
+            if(mid>prev){
+                if(index!=(nums.size()-1)){
+                    int next=nums[index+1];
+                    if(mid>next){
+                        return index;
                     }else{
-                        x++;
+                        index++;
                     }
                 }else{
-                    return x;
+                    return index;
                 }
             }else{
-                x++;
+                index++;
             }
         }
         return 0;
