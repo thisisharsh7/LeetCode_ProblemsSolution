@@ -13,17 +13,18 @@ public:
     ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
         if(list1==NULL){
             return list2;
-        }else if(list2==NULL){
+        }
+        if(list2==NULL){
             return list1;
         }
-        ListNode*list3;
-        if(list1->val < list2->val){
-            list3=list1;
-            list3->next=mergeTwoLists(list1->next,list2);
+        ListNode* list;
+        if(list1->val>list2->val){
+            list=list2;
+            list->next=mergeTwoLists(list1,list2->next);
         }else{
-            list3=list2;
-            list3->next=mergeTwoLists(list1,list2->next);
+            list=list1;
+            list->next=mergeTwoLists(list1->next,list2);
         }
-        return list3;
+        return list;
     }
 };
