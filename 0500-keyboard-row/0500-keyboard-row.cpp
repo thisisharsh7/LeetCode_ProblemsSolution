@@ -7,42 +7,37 @@ public:
         string third = "zxcvbnm";
 
         for(int i = 0;i<words.size();i++){
-            string s = "";
-            int x = 1;
-            int y = 2;
-            int z = 3;
+            bool b1 = true;
+            bool b2 = true;
+            bool b3 = true;
            for(int j = 0 ; j<words[i].length(); j++){
-               if(first.find(tolower(words[i][0]))<first.length() && x!=0){
+               if(b1){
                    if(first.find(tolower(words[i][j]))<first.length()){
-                   s+=words[i][j];
+                       b2 = false;
+                       b3 = false;
                    }else{
-                       break;
+                       b1 = false;
                    }
-                   z=0;
-                   y=0;
-               }else if(second.find(tolower(words[i][0]))<second.length() && y!=0){
+               }else if(b2){
                    if(second.find(tolower(words[i][j]))<second.length()){
-                   s+=words[i][j];
+                       b1 = false;
+                       b3 = false;
                    }else{
-                       break;
+                       b2 = false;
                    }
-                   x=0;
-                   z=0;
-               }else if(third.find(tolower(words[i][0]))<third.length() && z!=0){
+               }else if(b3){
                    if(third.find(tolower(words[i][j]))<third.length()){
-                   s+=words[i][j];
+                       b1 = false;
+                       b2 = false;
                    }else{
-                       break;
+                      b3 = false;
                    }
-                   x= 0;
-                   y=0;
                }else{
                   break;
                }
            }
-            if(s.length() == words[i].length()){
-                
-                ans.push_back(s);
+            if(b1 || b2 || b3){
+                ans.push_back(words[i]);
             }
    
         }
