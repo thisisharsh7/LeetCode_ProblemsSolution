@@ -53,27 +53,23 @@ void MyStack ::push(int x)
     // Your Code
     if(top==NULL){
         top = new StackNode(x);
-        return;
+    }else{
+        StackNode*n = new StackNode(x);
+        n->next = top;
+        top = n;
     }
-    StackNode* n = new StackNode(x);
-    n->next = top;
-    top = n;
-    return;
+
 }
 
 //Function to remove an item from top of the stack.
 int MyStack ::pop() 
 {
+    // Your Code
     if(top==NULL){
         return -1;
+    }else{
+        StackNode*n = top;
+        top = top->next;
+        return n->data;
     }
-
-   
-
-
-   int res=top->data;
-        top=top->next;
-        
-        return res;
-    // Your Code
 }
