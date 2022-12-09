@@ -1,3 +1,3 @@
-# LeetCode_ProblemsSolution
+# LeetCode_Problems Solution
 ..Sharing🤝 enhances Learning📖...
 My solution❤️ repo--
