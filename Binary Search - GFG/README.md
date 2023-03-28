@@ -1,6 +1,6 @@
 # Binary Search
 ## Easy
-<div class="problems_problem_content__Xm_eO"><p><span style="font-size:18px">Given a sorted array of size <strong>N</strong> and an integer <strong>K</strong>, find the position at which <strong>K</strong> is present in the array using binary search.</span></p>
+<div class="problems_problem_content__Xm_eO"><p><span style="font-size:18px">Given a sorted array of size <strong>N</strong> and an integer <strong>K</strong>, find the position(0-based indexing) at which <strong>K</strong> is present in the array using binary search.</span></p>
 
 <p><span style="font-size:18px"><strong>Example 1:</strong></span></p>
 
