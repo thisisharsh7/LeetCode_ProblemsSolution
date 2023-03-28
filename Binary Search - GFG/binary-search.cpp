@@ -13,18 +13,19 @@ class Solution {
     int binarysearch(int arr[], int n, int k) {
         // code here
         int i = 0;
-        int j=n;
-        while(i<=j){
+        int j = n;
+        while(i<j){
             int mid = (i+j)/2;
             if(arr[mid]==k){
                 return mid;
-            }else if(arr[mid]>k){
-                j=mid-1;
+            }else if(arr[mid]<k){
+                i++;
             }else{
-                i=mid+1;
+                j--;
             }
         }
         return -1;
+        
     }
 };
 
